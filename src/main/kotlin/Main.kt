@@ -1,5 +1,13 @@
 package org.example
 
+/**
+ * A super tiny compiler which does the following ->
+ *
+ * 1. Provided a lisp style expression convert it into a list of tokens.
+ * 2. Take those tokens and create an AST while validating the syntax.
+ * 3. Create a Visitor that visits all the nodes and reconstructs the original expression. Different visitors can be used
+ *    to output different code, showcasing the power of the design pattern.
+ */
 fun main() {
     val expression = "(add 2 (subtract 4 (add 5 10)))"
     val tokens = tokenize(expression)
